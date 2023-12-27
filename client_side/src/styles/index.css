@@ -1,4 +1,4 @@
-@import './variables.css';
+@import './variable.css';
 
 * {
     margin: 0;
@@ -28,6 +28,6 @@ a {
 }
 
 .contentContainer {
-    width: 100;
+    width: 100; 
     padding: 6px 22px;
 }

@@ -1,0 +1,49 @@
+.nav {
+    padding: 20px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between
+}
+
+.logo {
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    
+   
+    .icon{
+        font-size: xx-small;
+        width: 25px;
+        height: 25px;
+    }
+
+    .notification{
+        width: 25px;
+        height: 25px;
+    }
+
+    .userProfile {
+        display: flex;
+        align-items: center;
+        
+
+        img{
+            width: auto;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    
+
+}
+

@@ -1,5 +1,5 @@
 import React from 'react'
-import './ReportPage.css'
+import './ReportPage.scss'
 
 const ReportPage = () => {
   return (

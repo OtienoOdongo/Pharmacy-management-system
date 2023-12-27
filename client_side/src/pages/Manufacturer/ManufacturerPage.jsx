@@ -1,5 +1,5 @@
 import React from 'react'
-import './ManufacturerPage.css';
+import './ManufacturerPage.scss';
 
 const ManufacturerPage = () => {
   return (

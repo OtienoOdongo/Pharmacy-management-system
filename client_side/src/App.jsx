@@ -10,7 +10,7 @@ import FooterComponent from './components/Footer/FooterComponent';
 import MenuComponent from './components/Menu/MenuComponent';
 import NavbarComponent from './components/Navbar/NavbarComponent';
 import LoginPage from './pages/Login/LoginPage';
-import './styles/global.css';
+
 
 
 

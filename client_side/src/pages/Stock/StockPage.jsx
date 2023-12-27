@@ -1,5 +1,5 @@
 import React from 'react';
-import './StockPage.css';
+import './StockPage.scss';
 
 const StockPage = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react'
-import './UsersPage.css'
+import './UsersPage.scss'
 
 const UserPage = () => {
   return (
