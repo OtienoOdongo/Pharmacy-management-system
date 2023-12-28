@@ -19,15 +19,40 @@ a {
 
 .container {
     display: flex;
+    border: 1px solid var(--soft-bg);
+  }
+  
+  .sidebarContainer {
+    width: 170px;
+    padding: 6px 22px;
+    border-right: 20px solid var(--soft-color);
+    margin-left: 1px; 
+    border: 1px solid var(--soft-bg);
+    
+  }
+  
+  .contentContainer {
+    flex-grow: 1; /* Allow the content container to grow and take up the remaining space */
+    padding: 6px 22px;
+    height: 100vh;
+    
+  }
+  
+/* .container {
+    display: flex;
+    
 }
 
 .sidebarContainer {
     width: 250px;
     padding: 6px 22px;
-    border-right: 2px solid var(--soft-color);
+    border-right: 1px solid var(--soft-color);
+    margin-left: 1px;
+    border-bottom: 1px solid var(--soft-color);
 }
 
 .contentContainer {
     width: 100; 
     padding: 6px 22px;
-}
+    border-bottom: 1px solid var(--soft-color);
+} */

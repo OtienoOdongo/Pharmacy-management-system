@@ -1,49 +1,95 @@
-.nav {
-    padding: 20px;
+/* NavbarComponent.scss */
+
+.dashboard-navbar {
     display: flex;
-    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between
-}
-
-.logo {
-    display:flex;
-    align-items: center;
-    gap: 10px;
-    width: 25px;
-    height: 25px;
-    font-weight: bold;
-}
-
-.icons {
+    padding: 5px; 
+    font-size: 8px;
+    margin-left: 2px;
+    
+  
+    
+  }
+  
+  .logo {
     display: flex;
     align-items: center;
+    margin-top: 5px;
+    margin-left: 15px;
     
    
-    .icon{
-        font-size: xx-small;
-        width: 25px;
-        height: 25px;
+
+    img {
+      width: 40px; 
+      margin-right: 10px; 
+      margin-top: 5px;
+    }
+  }
+  
+  
+  .dashboard-icons {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  
+  .icon {
+    width: 20px; 
+    margin-right: 10px; 
+  }
+  
+
+  .notification {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; 
+    position: relative;
+
+    img {
+      width: 20px; 
+      margin-right: 5px; 
+      
     }
 
-    .notification{
-        width: 25px;
-        height: 25px;
+    span {
+      font-size: 7px;
+      background-color: red;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      color: white;
+      top: -4px; 
+      right: 0; /* Align to the right */
+      transform: translate(50%, -50%); /* Center horizontally */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
     }
 
-    .userProfile {
-        display: flex;
-        align-items: center;
-        
+  }
+ 
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 
-        img{
-            width: auto;
-            height: auto;
-            object-fit: cover;
-        }
+    img {
+      width: 26px; 
+      height: 28px;
+      margin-right: 5px; 
+      border-radius: 50%
     }
 
-    
-
-}
-
+    span {
+      font-size: 6px; 
+      margin-right: 8px;
+    }
+  }
+  
+   
+  
