@@ -1,0 +1,93 @@
+
+
+.chart-box {
+    display: flex;
+    height: 100%;
+    transition: transform 0.3s ease-in-out; /* Added transition for smooth effects */
+  
+    &:hover {
+      transform: scale(1.05); /* Scale up on hover */
+    }
+  
+    .gridinfo {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 10px;
+        margin-bottom: 10px;
+        color: aliceblue;
+  
+        img {
+          height: 50px;
+          width: 50px;
+          transition: transform 0.3s ease-in-out; /* Added transition for smooth effects */
+  
+          &:hover {
+            transform: scale(1.1); /* Scale up on hover */
+          }
+        }
+      }
+  
+      .header {
+        font-size: 15px;
+        color: aliceblue;
+      }
+  
+      .otherinfo {
+        font-size: 12px;
+        margin-right: auto;
+        height: 10px;
+        padding-bottom: 9px;
+        font-weight: bolder;
+        font-style: oblique;
+      }
+    }
+  
+    .chartinfo {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+  
+      .charts {
+        flex: 2;
+        width: 100%;
+        height: 100%;
+      }
+  
+      .text {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+  
+        .percentage {
+          font-weight: bold;
+          font-size: 9px;
+        }
+  
+        .duration {
+          font-size: 8px;
+          color: cornflowerblue;
+        }
+  
+        .image {
+          img {
+            width: 50px;
+            height: 50px;
+            transition: transform 0.3s ease-in-out; /* Added transition for smooth effects */
+  
+            &:hover {
+              transform: scale(1.1); /* Scale up on hover */
+            }
+          }
+        }
+      }
+    }
+  }
+  
