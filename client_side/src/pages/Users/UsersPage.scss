@@ -1,9 +1,9 @@
 
-.suppliers {
+.users {
     text-align: center;
     text-decoration-line: none;
   
-    .suppliersinfo {
+    .userinfo {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -16,7 +16,7 @@
         
       }
   
-      .new-supplier {
+      .new-user {
         align-self: start;
         margin-top: 6px; 
         padding: 10px 40px; 
@@ -36,3 +36,4 @@
     }
   }
   
+

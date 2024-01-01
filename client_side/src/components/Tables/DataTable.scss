@@ -1,0 +1,62 @@
+
+.data-table {
+    height: 70vh; 
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    .search-bar {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      border-radius: 10px;
+  
+      input {
+        padding: 8px;
+        background-color: bisque;
+        border: 1px solid;
+        border-radius: 5px;
+        margin-left: 4px;
+      }
+    }
+  
+    .data-grid {
+      background-color: bisque;
+      padding: 8px;
+      border-radius: 10px;
+      
+  
+    
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+  
+      .actions {
+        display: flex;
+        gap: 15px;
+  
+        img {
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+          border-radius: 0;
+        }
+
+        .view{
+          border:none;
+          outline: none;
+          background-color:  bisque;
+        }
+        .delete{
+          border: none;
+          outline: none;
+          background-color:  bisque;
+        }
+      }
+    }
+  }
+  

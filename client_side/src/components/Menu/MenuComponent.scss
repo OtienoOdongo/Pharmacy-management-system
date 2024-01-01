@@ -5,13 +5,14 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         
 
         .title {
-            font-size: 9px;
-            font-weight: 250;  
-            color: var(--soft-color);
+            font-size: 15px;
+            font-weight: 600;  
+            color: solid var(--soft-color);
+            font-family: sans-serif;
         }
 
         .main-item {
@@ -21,12 +22,13 @@
             padding: 10px;
 
             img {
-                width: 20px;
-                height: 20px;
+                width: 30px;
+                height: 30px;
             }
 
             .Item-title {
-                font-size: 8px;
+                font-size: 18px;
+                font-weight: 300;
             }
 
             

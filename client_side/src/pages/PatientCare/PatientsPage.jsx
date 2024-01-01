@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import './SuppliersPage.scss'
+import React, {useState} from 'react'
+import './PatientsPage.scss'
 import AddNewUser from '../../components/AddUser/AddNewUser';
 import DataTable from '../../components/Tables/DataTable'
-import { supplierRows } from '../../data';
+import { patientRows } from '../../data';
 
 
 const columns = [
@@ -40,21 +40,20 @@ const columns = [
     type: 'boolean',
   },
   
-];
+]
 
-
-const SuppliersPage = () => {
+const PatientsPage = () => {
   const [open, setOpen] = useState(false)
   return (
-    <div className='suppliers'>
-      <div className='suppliersinfo'>
-        <h1>Manufacturers</h1>
-        <button className='new-supplier' onClick={() => setOpen(true)}>Add New Manufacturers</button>
+    <div className='patients'>
+      <div className='patientsinfo'>
+        <h1>Patients</h1>
+        <button className='new-patient' onClick={() => setOpen(true)}>Add New Patient</button>
       </div>
-      <DataTable slug='suppliers' columns={columns} rows={supplierRows}/>
+      <DataTable slug='suppliers' columns={columns} rows={patientRows}/>
       {open && <AddNewUser slug='supplier' columns={columns} setOpen={setOpen}/>}
     </div>
   )
 }
 
-export default SuppliersPage
+export default PatientsPage

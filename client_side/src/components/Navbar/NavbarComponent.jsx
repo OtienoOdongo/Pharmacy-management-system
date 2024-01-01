@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
         <div className='user-profile'>
           <img src="profile-image.jpg" alt="user profile" />
-          <span>Rodgers</span>
+          <span>Milly</span>
         </div>
       </div>
     </div>
