@@ -601,6 +601,30 @@ export const sidebarMenu = [
   ];
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   export const kanbanGrid = [
     { headerText: 'To Do',
       keyField: 'Open',
@@ -619,6 +643,7 @@ export const sidebarMenu = [
       keyField: 'Close',
       allowToggle: true },
   ];
+
 
   export const kanbanData = [
     {
@@ -972,3 +997,138 @@ export const sidebarMenu = [
       ClassName: 'e-bug, e-release, e-nancy-davloio',
     },
   ];
+
+
+  export const calendarData = [
+    {
+      Id: 1,
+      Subject: 'Pharmacy Opening',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-10T07:00:00.000Z', 
+      EndTime: '2021-01-10T08:30:00.000Z',   
+      CategoryColor: '#1aaa55',
+    },
+    {
+      Id: 2,
+      Subject: 'Medicine Stock Update',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-11T09:30:00.000Z', 
+      EndTime: '2021-01-11T11:30:00.000Z',   
+      CategoryColor: '#357cd2',
+    },
+    {
+      Id: 3,
+      Subject: 'Customer Consultation',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-12T07:00:00.000Z', 
+      EndTime: '2021-01-12T08:30:00.000Z',  
+      CategoryColor: '#7fa900',
+    },
+    {
+      Id: 4,
+      Subject: 'Prescription Review',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-13T10:30:00.000Z', 
+      CategoryColor: '#ea7a57',
+    },
+    {
+      Id: 5,
+      Subject: 'Health and Wellness Seminar',
+      Location: 'Nairobi, Kenya',
+      EndTime: '2021-01-14T11:30:00.000Z',   
+      StartTime: '2021-01-14T09:30:00.000Z', 
+      CategoryColor: '#00bdae',
+    },
+    {
+      Id: 6,
+      Subject: 'Medical Conference',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-14T07:00:00.000Z', 
+      EndTime: '2021-01-14T08:30:00.000Z',   
+      CategoryColor: '#f57f17',
+    },
+    {
+      Id: 7,
+      Subject: 'Health Education Program',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-15T08:30:00.000Z', 
+      EndTime: '2021-01-15T10:00:00.000Z',   
+      CategoryColor: '#1aaa55',
+    },
+    {
+      Id: 8,
+      Subject: 'Medical Research Presentation',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-16T06:30:00.000Z', 
+      EndTime: '2021-01-16T07:30:00.000Z',   
+      CategoryColor: '#357cd2',
+    },
+    {
+      Id: 9,
+      Subject: 'Community Health Checkup',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-18T08:30:00.000Z', 
+      EndTime: '2021-01-18T10:30:00.000Z',   
+      CategoryColor: '#7fa900',
+    },
+    {
+      Id: 10,
+      Subject: 'First Aid Training',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-20T08:30:00.000Z', 
+      EndTime: '2021-01-20T10:30:00.000Z',   
+      CategoryColor: '#ea7a57',
+    },
+    {
+      Id: 11,
+      Subject: 'Pharmacy Photography Contest',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-21T07:00:00.000Z', 
+      EndTime: '2021-01-21T08:30:00.000Z',   
+      CategoryColor: '#00bdae',
+    },
+    {
+      Id: 12,
+      Subject: 'Stocl Taking',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-08T07:30:00.000Z',
+      EndTime: '2021-01-08T09:00:00.000Z',   
+      CategoryColor: '#f57f17',
+    },
+    {
+      Id: 13,
+      Subject: 'Health Myths Discussion',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-06T08:00:00.000Z', 
+      EndTime: '2021-01-06T10:00:00.000Z',   
+      CategoryColor: '#1aaa55',
+    },
+    {
+      Id: 14,
+      Subject: 'Healthy Living Symposium',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-05T07:30:00.000Z', 
+      EndTime: '2021-01-05T09:00:00.000Z',   
+      CategoryColor: '#357cd2',
+    },
+    {
+      Id: 15,
+      Subject: 'Bird Watching Event',
+      Location: 'Nairobi, Kenya',
+      StartTime: '2021-01-19T07:00:00.000Z', 
+      EndTime: '2021-01-19T08:30:00.000Z',   
+      CategoryColor: '#7fa900',
+    },
+    
+  ];
+
+
+  export const invoiceRows = [
+    {
+      id: 23,
+      amount: 'KES 35 678',
+      email: 'teroqi@leg.com',
+      status: 'complete'
+    },
+  ];
+  

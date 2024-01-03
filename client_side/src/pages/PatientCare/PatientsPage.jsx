@@ -16,8 +16,8 @@ const columns = [
     },
   },
   {
-    field: 'companyName',
-    headerName: 'Company Name',
+    field: 'patientName',
+    headerName: 'Patient Name',
     width: 150,
     editable: true,
   },
@@ -30,6 +30,18 @@ const columns = [
   {
     field: 'email',
     headerName: 'Email Address',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'purchaseDetails',
+    headerName: 'Purchase Details',
+    width: 150,
+    editable: true,
+  },
+  {
+    field: 'amount',
+    headerName: 'Amount',
     width: 150,
     editable: true,
   },

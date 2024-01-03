@@ -1,0 +1,37 @@
+
+.invoices {
+    text-align: center;
+    text-decoration-line: none;
+  
+    .invoicesinfo {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+  
+      h1 {
+        margin-bottom: 0px; 
+        font-weight: 900;
+        font-size: x-large;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        
+      }
+  
+      .new-invoice {
+        align-self: start;
+        margin-top: 6px; 
+        padding: 10px 40px; 
+        font-size: 16px; 
+        background-color: bisque; 
+        color: black; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease; 
+  
+        &:hover {
+          background-color: aqua;
+          
+        }
+      }
+    }
+  }

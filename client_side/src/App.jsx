@@ -50,10 +50,6 @@ function App() {
           element: <UsersPage />, 
         },
         {
-          path: '/users',
-          element: <UsersPage />,
-        },
-        {
           path: '/pharmaceuticals',
           element: <DrugsPage />,
         },

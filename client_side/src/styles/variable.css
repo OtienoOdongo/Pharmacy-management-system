@@ -1,6 +1,6 @@
 :root {
     /* main background color for the entire app */
-    --main-bg: #2a3447;
+    --main-bg: #0f254e;
     --soft-bg: #384050;
     --dark-bg: #222b3c;
     
@@ -12,3 +12,6 @@
     ---text-color: #821eca;
     ---text-color: #00ff00;
   }
+
+  /* --main-bg: #2a3447; */
+  /* --main-bg: #0f254e; */
