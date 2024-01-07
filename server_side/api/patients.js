@@ -1,5 +1,5 @@
 import express from 'express';
-import Patient from '../models/patients.js';
+import PatientModel from '../models/patients.js';
 import mongoose from 'mongoose';
 
 const router = express.Router();
@@ -9,7 +9,7 @@ const router = express.Router();
 // Creating a new patient resource using a POST method
 router.post('/', async (req, res) => {
   try {
-    const patient = new Patient({
+    const patient = new PatientModel({
       _id: new mongoose.Types.ObjectId(),
       patientName: req.body.patientName,
       phoneNumber: req.body.phoneNumber,
@@ -38,8 +38,8 @@ router.post('/', async (req, res) => {
 // Getting all patients resource using a GET method
 router.get('/', async (req, res) => {
   try {
-    const documents = await Patient.find().exec()
-      // .select('_id patientName phoneNumber email items quantities amount ')
+    const documents = await PatientModel.find().exec()
+    // .select('_id patientName phoneNumber email items quantities amount ')
     res.status(200).json(documents);
   } catch (err) {
     console.error('Error retrieving all patients:', err);
@@ -56,7 +56,7 @@ router.get('/', async (req, res) => {
 router.get('/:patientId', async (req, res) => {
   try {
     const id = req.params.patientId;
-    const document = await Patient.findById(id).exec();
+    const document = await PatientModel.findById(id)
 
     if (document) {
       res.status(200).json(document);
@@ -93,7 +93,7 @@ router.patch('/:patientId', async (req, res) => {
       updatePatientData[patientData.propName] = patientData.value;
     }
 
-    const result = await Patient.updateOne({ _id: id }, { $set: updatePatientData }).exec();
+    const result = await PatientModel.updateOne({ _id: id }, { $set: updatePatientData })
 
     if (result.nModified === 0) {
       res.status(404).json({
@@ -127,7 +127,7 @@ router.patch('/:patientId', async (req, res) => {
 router.delete('/:patientId', async (req, res) => {
   try {
     const id = req.params.patientId;
-    const result = await Patient.deleteOne({ _id: id }).exec();
+    const result = await PatientModel.deleteOne({ _id: id }).exec();
 
     if (result.n === 0) {
       res.status(404).json({

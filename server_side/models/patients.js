@@ -12,7 +12,7 @@ const patientSchema = new mongoose.Schema({
   phoneNumber: {
     type: Number,
     required: true,
-    maxlength: 15,
+    maxlength: 20,
   },
   email: {
     type: String,
@@ -38,14 +38,15 @@ const patientSchema = new mongoose.Schema({
   },
 }, {
   timestamps: true,
+  versionKey: false
 });
 
 
 
-const Patient = mongoose.model('Patient', patientSchema);
+const PatientModel = mongoose.model('Patient', patientSchema);
 
 
-export default Patient;
+export default PatientModel;
 
 
 
