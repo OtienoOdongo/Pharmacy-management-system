@@ -62,8 +62,8 @@ const PatientsPage = () => {
         <h1>Patients</h1>
         <button className='new-patient' onClick={() => setOpen(true)}>Add New Patient</button>
       </div>
-      <DataTable slug='suppliers' columns={columns} rows={patientRows}/>
-      {open && <AddNewUser slug='supplier' columns={columns} setOpen={setOpen}/>}
+      <DataTable slug='patients' columns={columns} rows={patientRows}/>
+      {open && <AddNewUser slug='patient' columns={columns} setOpen={setOpen}/>}
     </div>
   )
 }

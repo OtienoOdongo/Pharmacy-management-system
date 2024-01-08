@@ -1,5 +1,5 @@
 import React,  { useState } from 'react'
-import './DrugsPage.scss'
+import './PharmaceuticalsPage.scss'
 import AddNewUser from '../../components/AddUser/AddNewUser';
 import DataTable from '../../components/Tables/DataTable'
 import { productRows } from '../../data';
@@ -90,7 +90,7 @@ const columns = [
   
 ];
 
-const DrugsPage = () => {
+const PharmaceuticalsPage = () => {
   const [open, setOpen] = useState(false)
 
   const modifiedProductsRows = productRows.map(row => ({
@@ -111,4 +111,4 @@ const DrugsPage = () => {
 
 }
 
-export default DrugsPage
+export default PharmaceuticalsPage

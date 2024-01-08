@@ -42,7 +42,7 @@ const InvoicesPage = () => {
     <div className='invoices'>
       <div className='invoicesinfo'>
         <h1>Invoices</h1>
-        <button className='new-invoice' onClick={() => setOpen(true)}>Add New Manufacturers</button>
+        <button className='new-invoice' onClick={() => setOpen(true)}>Add New Invoice</button>
       </div>
       <DataTable slug='invoices' columns={columns} rows={invoiceRows}/>
       {open && <AddNewUser slug='invoice' columns={columns} setOpen={setOpen}/>}

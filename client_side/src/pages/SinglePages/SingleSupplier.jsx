@@ -1,9 +1,9 @@
 import React from 'react'
 
-const singleSupplier = () => {
+const SingleSupplier = () => {
   return (
     <div>singleSupplier</div>
   )
 }
 
-export default singleSupplier
+export default SingleSupplier

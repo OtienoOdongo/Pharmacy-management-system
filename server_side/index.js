@@ -25,10 +25,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());  
 
 
-app.use('/patients', patientsRoutes)
-app.use('/pharmaceuticals', pharmaceuticalsRoutes)
+app.use('/api/patients', patientsRoutes)
+app.use('/api/pharmaceuticals', pharmaceuticalsRoutes)
 app.use('/users', usersRoutes)
-app.use('/suppliers', suppliersRoutes)
+app.use('/api/suppliers', suppliersRoutes)
 
 
 
