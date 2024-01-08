@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    image: {
+        type: String,
+        required: false,
+    },
     fullName: {
         type: String,
         required: true
@@ -11,16 +15,17 @@ const userSchema = new mongoose.Schema({
         required: true,
         maxlength: 20,
     },
-    designation: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         required: true,
         unique: true,
         match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     },
+    designation: {
+        type: String,
+        required: true
+    },
+   
 },
 {
     timestamp: true,

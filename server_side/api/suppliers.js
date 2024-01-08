@@ -119,18 +119,4 @@ router.delete('/:supplierId', async (req, res) => {
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default router;

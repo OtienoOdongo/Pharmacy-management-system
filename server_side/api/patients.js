@@ -39,7 +39,6 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const documents = await PatientModel.find().exec()
-    // .select('_id patientName phoneNumber email items quantities amount ')
     res.status(200).json(documents);
   } catch (err) {
     console.error('Error retrieving all patients:', err);
@@ -154,7 +153,6 @@ router.delete('/:patientId', async (req, res) => {
     }
   }
 });
-
 
 
 export default router;

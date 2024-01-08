@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
     try {
         const user = new UserModel({
             _id: new mongoose.Types.ObjectId(),
+            image: req.body.image,
             fullName: req.body.fullName,
             phoneNumber: req.body.phoneNumber,
             designation: req.body.designation,
@@ -133,34 +134,6 @@ router.delete('/:userId', async (req, res) => {
       }
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default router;

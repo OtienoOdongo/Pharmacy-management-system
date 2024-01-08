@@ -41,7 +41,7 @@ const pharmaceuticalSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['low', 'available', 'out of stock'],
+        enum: ['Low', 'Available', 'Out Of Stock'],
         required: true,
         
     },
