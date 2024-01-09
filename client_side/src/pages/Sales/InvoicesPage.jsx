@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import './InvoicesPage.scss'
-import AddNewUser from '../../components/AddUser/AddNewUser'
+import AddNewData from '../../components/AddComponent/AddNewData'
 import DataTable from '../../components/Tables/DataTable'
 import { invoiceRows } from '../../data';
 
@@ -45,7 +45,7 @@ const InvoicesPage = () => {
         <button className='new-invoice' onClick={() => setOpen(true)}>Add New Invoice</button>
       </div>
       <DataTable slug='invoices' columns={columns} rows={invoiceRows}/>
-      {open && <AddNewUser slug='invoice' columns={columns} setOpen={setOpen}/>}
+      {open && <AddNewData slug='Invoice' columns={columns} setOpen={setOpen}/>}
     </div>
   )
 }

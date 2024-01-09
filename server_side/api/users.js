@@ -15,6 +15,8 @@ router.post('/', async (req, res) => {
             phoneNumber: req.body.phoneNumber,
             designation: req.body.designation,
             email: req.body.email,
+            createdAt: req.body.createdat,
+            updatedAt: req.body.updatedat
         });
 
         const result = await user.save();
@@ -36,6 +38,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (req, res) => { 
     try{
         const documents = await UserModel.find()
+        console.log('Fetched Users:', documents);
         res.status(200).json(documents)
     } catch (err) {
         console.error('Error retrieving all Users:', err)
@@ -47,21 +50,6 @@ router.get('/', async (req, res) => {
 
 });
 
-
-// Getting all users resource using a GET method
-router.get('/', async (req, res) => { 
-    try{
-        const documents = await UserModel.find()
-        res.status(200).json(documents)
-    } catch (err) {
-        console.error('Error retrieving all Users:', err)
-        res.status(500).json({
-            message: 'Internal Server Error.',
-            error: err.message || err,
-        });
-    }
-
-});
 
 
 //updating a user resource by ID

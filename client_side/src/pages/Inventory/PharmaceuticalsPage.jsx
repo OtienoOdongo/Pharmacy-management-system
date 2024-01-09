@@ -1,6 +1,6 @@
 import React,  { useState } from 'react'
 import './PharmaceuticalsPage.scss'
-import AddNewUser from '../../components/AddUser/AddNewUser';
+import AddNewData from '../../components/AddComponent/AddNewData';
 import DataTable from '../../components/Tables/DataTable'
 import { productRows } from '../../data';
 
@@ -102,10 +102,10 @@ const PharmaceuticalsPage = () => {
     <div className='drugs'>
       <div className='drugsinfo'>
         <h1>Pharmaceutical</h1>
-        <button className='new-drugs' onClick={() => setOpen(true)}>Add New Medicine</button>
+        <button className='new-drugs' onClick={() => setOpen(true)}>Add New Pharmaceutical</button>
       </div>
       <DataTable slug='pharmaceuticals' columns={columns} rows={modifiedProductsRows}/>
-      {open && <AddNewUser slug='pharmaceutical' columns={columns} setOpen={setOpen}/>}
+      {open && <AddNewData slug='Pharmaceutical' columns={columns} setOpen={setOpen}/>}
     </div>
   )
 

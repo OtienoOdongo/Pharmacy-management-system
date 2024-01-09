@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './SuppliersPage.scss'
-import AddNewUser from '../../components/AddUser/AddNewUser';
+import AddNewData from '../../components/AddComponent/AddNewData';
 import DataTable from '../../components/Tables/DataTable'
 import { supplierRows } from '../../data';
 
@@ -52,7 +52,7 @@ const SuppliersPage = () => {
         <button className='new-supplier' onClick={() => setOpen(true)}>Add New Manufacturers</button>
       </div>
       <DataTable slug='suppliers' columns={columns} rows={supplierRows}/>
-      {open && <AddNewUser slug='supplier' columns={columns} setOpen={setOpen}/>}
+      {open && <AddNewData slug='supplier' columns={columns} setOpen={setOpen}/>}
     </div>
   )
 }

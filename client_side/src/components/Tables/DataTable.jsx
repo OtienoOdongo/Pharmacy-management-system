@@ -10,6 +10,7 @@ const DataTable = (props) => {
     // Delete the API via API call
     // axios.delete(`/api/${props.slug}/${id}`)
     console.log(id + ' has been deleted');
+    
   };
 
   const actionColumns = {
@@ -62,6 +63,7 @@ const DataTable = (props) => {
           pageSize={100}
           checkboxSelection
           disableRowSelectionOnClick
+          
         />
       </div>
     </div>

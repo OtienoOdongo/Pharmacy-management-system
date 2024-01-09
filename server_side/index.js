@@ -27,7 +27,7 @@ app.use(cors());
 
 app.use('/api/patients', patientsRoutes)
 app.use('/api/pharmaceuticals', pharmaceuticalsRoutes)
-app.use('/users', usersRoutes)
+app.use('/api/users', usersRoutes)
 app.use('/api/suppliers', suppliersRoutes)
 
 

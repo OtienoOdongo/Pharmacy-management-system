@@ -2,27 +2,27 @@ import React,{ useState, useEffect } from 'react'
 import axios from 'axios'
 import './UsersPage.scss'
 import DataTable from '../../components/Tables/DataTable'
-import AddNewUser from '../../components/AddUser/AddNewUser';
+import AddNewData from '../../components/AddComponent/AddNewData';
 
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 120 },
+  { field: 'id', headerName: 'ID', width: 250 },
   {
-    field: 'img',
+    field: 'image',
     headerName: 'Avatar',
-    width: 150,
+    width: 100,
     renderCell: (params) => {
-      return <img src={params.row.img || 'noavatar.png'} alt='' />;
+      return <img src={params.row.image || 'noavatar.png'} alt='' />;
     },
   },
   {
     field: 'fullName',
     headerName: 'Full Name',
-    width: 120,
+    width: 170,
     editable: true,
   },
   {
-    field: 'phone',
+    field: 'phoneNumber',
     headerName: 'Phone Number',
     width: 150,
     editable: true,
@@ -30,21 +30,16 @@ const columns = [
   {
     field: 'email',
     headerName: 'Email Address',
-    width: 150,
+    width: 200,
     editable: true,
   },
-  
   {
-    field: 'createdAt',
-    headerName: 'CreatedAt',
-    width: 150,
+    field: 'designation',
+    headerName: 'Designation',
+    width: 170,
+    editable: true,
   },
-  {
-    field: 'updatedAt',
-    headerName: 'UpdatedAt',
-    width: 150,
-  },
-  
+     
 ];
 
 
@@ -52,47 +47,37 @@ const columns = [
 const UsersPage = () => {
 
   const [open, setOpen] = useState(false)
-
   const [users, setUsers] = useState([])
   const [isLoading, setIsLoading] = useState(false)
+  const [successMessage, setSuccessMessage] = useState(null);
+ 
 
-  // const getUsers = async () => {
-  //   try {
-
-  //     setIsLoading(true)
-  //     const response = await axios.get('/api/users')
-  //     console.log('Response from server:', response.data);
-  //     const users = response.data.map(user => ({ ...user, id: user._id }));
-  //     setUsers(users);
-  //     setIsLoading(false); // Set loading to false when data is received
-
-  //   } catch (error) {
-  //     console.log(error)
-  //     setIsLoading(false); // Set loading to false in case of an error
-  //   }
-  // }
   const getUsers = async () => {
     try {
-      setIsLoading(true);
-      const response = await axios.get('/users');
-      if (Array.isArray(response.data)) {
-        const users = response.data.map(user => ({ ...user, id: user._id }));
-        setUsers(users);
-      } else {
-        console.error('Invalid response format. Expected an array.');
-      }
-      setIsLoading(false);
+
+      setIsLoading(true)
+      const response = await axios.get('http://localhost:5001/api/users')
+      const fetchedUsers = response.data.map((user) => ({ ...user, id: user._id }));
+      console.log(fetchedUsers)
+      setUsers(fetchedUsers);
+      setIsLoading(false); // Set loading to false when data is received
+
     } catch (error) {
-      console.error('Error fetching users:', error);
-      setIsLoading(false);
+      console.log(error)
     }
-  };
-  
+  }
 
 
   useEffect(() => {
     getUsers() // Fetching users only when the component mounts
   }, [])
+
+  const showSuccessMessage = (message) => {
+    setSuccessMessage(message);
+    getUsers(); // Refresh users after successful submission
+    setOpen(false); // Close the form
+    setTimeout(() => setSuccessMessage(null), 3000); // Clear success message after 3 seconds
+  };
 
 
   return (
@@ -103,11 +88,24 @@ const UsersPage = () => {
       </div>
       {isLoading ? (
         'Loading...'
-      ): <DataTable slug='users' columns={columns} rows={users}/>
+      ): <DataTable slug='users' columns={columns} rows={users} />
       }
-      {open && <AddNewUser slug='user' columns={columns} setOpen={setOpen}/>}
+      {successMessage && <p className="success-message">{successMessage}</p>}
+      {open && (
+        <AddNewData
+          slug="User"
+          columns={columns}
+          setOpen={setOpen}
+          showSuccessMessage={showSuccessMessage}
+        />
+      )}
     </div>
   )
 }
 
+
 export default UsersPage
+
+
+
+

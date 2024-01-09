@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './PatientsPage.scss'
-import AddNewUser from '../../components/AddUser/AddNewUser';
+import AddNewData from '../../components/AddComponent/AddNewData';
 import DataTable from '../../components/Tables/DataTable'
 import { patientRows } from '../../data';
 
@@ -63,7 +63,7 @@ const PatientsPage = () => {
         <button className='new-patient' onClick={() => setOpen(true)}>Add New Patient</button>
       </div>
       <DataTable slug='patients' columns={columns} rows={patientRows}/>
-      {open && <AddNewUser slug='patient' columns={columns} setOpen={setOpen}/>}
+      {open && <AddNewData slug='patient' columns={columns} setOpen={setOpen}/>}
     </div>
   )
 }
