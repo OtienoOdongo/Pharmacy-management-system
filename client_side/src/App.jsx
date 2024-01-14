@@ -9,7 +9,7 @@ import SingleUser from './pages/SinglePages/SingleUser';
 import PharmaceuticalsPage from './pages/Inventory/PharmaceuticalsPage';
 import SinglePharma from './pages/SinglePages/SinglePharma';
 
-import SuppliersPage from './pages/Inventory/SuppliersPage';
+import ManufacturersPage from './pages/Inventory/ManufacturersPage';
 import SingleSupplier from './pages/SinglePages/SingleSupplier';
 
 import PatientsPage from './pages/PatientCare/PatientsPage';
@@ -74,12 +74,12 @@ function App() {
           element: <SinglePharma />,
         },
         {
-          path: '/suppliers',
-          element: <SuppliersPage />,
+          path: '/manufacturers',
+          element: <ManufacturersPage />,
 
         },
         {
-          path: '/suppliers/:id',
+          path: '/manufacturers/:id',
           element: <SingleSupplier />,
 
         },

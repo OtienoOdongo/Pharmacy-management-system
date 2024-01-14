@@ -15,12 +15,12 @@ export const sidebarMenu = [
         url: "/users",
         icon: "users.png",
       },
-      {
-        id: 3,
-        title: "Profile",
-        url: "/profile",
-        icon: "profile.png",
-      },
+      // {
+      //   id: 3,
+      //   title: "Profile",
+      //   url: "/profile",
+      //   icon: "profile.png",
+      // },
     ],
   },
   {
@@ -35,9 +35,9 @@ export const sidebarMenu = [
       },
       {
         id: 2,
-        title: "Suppliers",
-        url: "/suppliers",
-        icon: "suppliers.png",
+        title: "Manufacturers",
+        url: "/manufacturers",
+        icon: "manufacturer.png",
       },
     ],
   },

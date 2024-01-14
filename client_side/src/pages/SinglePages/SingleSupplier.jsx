@@ -1,8 +1,11 @@
 import React from 'react'
 
+
 const SingleSupplier = () => {
   return (
-    <div>singleSupplier</div>
+    <div>
+      
+    </div>
   )
 }
 

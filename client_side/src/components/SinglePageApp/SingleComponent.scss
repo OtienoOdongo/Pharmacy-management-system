@@ -1,0 +1,189 @@
+@import '../../styles/variable.css';
+
+.single{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: minmax(190px);
+
+
+
+    .box-1{
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid var(--soft-bg);
+        grid-column: span 1;
+        grid-row: span 55;
+
+        .left-info{
+
+            img{
+                width: 350px;
+                height: 350px;
+                border-radius: 20px;
+                object-fit: cover;
+                display: flex;
+                align-items: center;
+            }
+
+            h1{
+                padding-top: 20px;
+                padding-right: 10px;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: normal;
+                font-size: x-large;
+                font-style: italic;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .box-2{
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid var(--soft-bg);
+        grid-column: span 1;
+        grid-row: span 55;
+        align-items: center;
+
+
+        .mini-box-1{
+            align-items: center;
+            
+            h1{
+                text-align: center; 
+                padding-bottom: 10px; 
+                margin-top: 30px; 
+                 
+            }
+            h3{
+                text-align: center; 
+                padding-bottom: 30px; 
+                font-weight: lighter;
+            }     
+        }
+
+        .form-div-1{
+            text-align: start;
+            padding-top: 20px; 
+            display: flex;
+            margin-bottom: 30px;
+        
+            
+            
+            
+            .text-1{
+                
+
+                .input-1{
+                    display: flex;
+                    max-width: 300%;
+                    padding-right: 910px;
+                    border-radius: 10px;
+                    border: 1px solid var(--soft-bg);
+                    background: none;
+                    position: relative;
+                    padding-bottom: 30px;
+                   
+                    &:focus{
+                        outline: none;
+                    }
+                    
+                    &::placeholder {
+                        display: flex;
+                        align-items: center;
+                        position: absolute; 
+                        top: 50%; 
+                        transform: translateY(-50%); 
+                        opacity: 0.7;
+                        padding-left: 20px;
+                    }
+                    
+    
+                }
+
+                h2{
+                    padding-bottom: 20px;
+                    font-weight: 100;
+                    font-size: 20px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-style: italic;
+                }
+               
+            }
+            
+
+           
+        }
+
+
+        .button-container {
+            display: flex;
+            justify-content: space-between; 
+            margin-right: 79%;
+
+
+            .update-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                border: 1px solid  rgb(0, 255, 51); 
+                padding: 10px 20px; 
+                margin-top: 50px;
+                background-color:  rgb(0, 255, 51); 
+                text-align: center;
+                cursor: pointer;
+                transition: background-color 0.3s; 
+              
+                h2 {
+                  margin: 0; 
+                  color: #000000; 
+                }
+              
+                &:hover {
+                  background-color: rgb(0, 238, 255); 
+                  }
+                }
+    
+    
+                .cancel-btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 15px;
+                    border: 1px solid red;
+                    padding: 10px 20px; 
+                    margin-top: 50px;
+                    background-color: red;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s; 
+                    
+    
+    
+                    h2 {
+                        margin: 0; 
+                        color: #000000; 
+                      }
+                    
+                      &:hover {
+                        background-color: rgb(255, 0, 212); 
+                      
+                        }
+                }
+
+
+
+
+        }
+
+
+        
+          
+    }
+
+
+
+}

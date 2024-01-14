@@ -1,8 +1,9 @@
-import React,  { useState } from 'react'
+import React,  { useState, useEffect } from 'react'
+import axios from 'axios';
 import './PharmaceuticalsPage.scss'
 import AddNewData from '../../components/AddComponent/AddNewData';
 import DataTable from '../../components/Tables/DataTable'
-import { productRows } from '../../data';
+
 
 const getStatus = (stock) => {
   if (stock > 5) {
@@ -15,13 +16,13 @@ const getStatus = (stock) => {
 };
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 90 },
+  { field: 'id', headerName: 'ID', width: 200 },
   {
-    field: 'img',
+    field: 'image',
     headerName: 'Avatar',
     width: 90,
     renderCell: (params) => {
-      return <img src={params.row.img || 'noavatar.png'} alt='' />;
+      return <img src={params.row.image || 'noavatar.png'} alt='' />;
     },
   },
   {
@@ -73,9 +74,9 @@ const columns = [
     editable: true,
   },
   {
-    field: 'expirerDate',
+    field: 'expireryDate',
     headerName: 'Expirer Date',
-    width: 80,
+    width: 150,
     editable: true,
   },
   {
@@ -90,25 +91,91 @@ const columns = [
   
 ];
 
-const PharmaceuticalsPage = () => {
-  const [open, setOpen] = useState(false)
 
-  const modifiedProductsRows = productRows.map(row => ({
-    ...row,
-    status: getStatus(row.stock),
-  }));
+
+
+const PharmaceuticalsPage = () => {
+  
+  // State variables
+  const [open, setOpen] = useState(false);
+  const [pharmaceuticals, setPharmaceuticals] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  
+
+
+  // A function that fetches pharmaceutical data
+  const getPharmaceuticals = async () => {
+    try {
+      setIsLoading(true);
+      // Making an HTTP GET request to fetch pharmaceutical data
+      const response = await axios.get('http://localhost:5001/api/pharmaceuticals');
+      // Mapping the response data and adding an 'id' field
+      const fetchedPharmaceutical = response.data.map((pharmaceutical) => ({
+        ...pharmaceutical,
+        id: pharmaceutical._id,
+      }));
+      // Updating state with the fetched data
+      setPharmaceuticals(fetchedPharmaceutical);
+      setIsLoading(false); // Set loading to false when data is received
+    } catch (error) {
+      console.log('Error when retrieving all Pharmaceuticals Products:', error);
+      
+    }
+  };
+
+
+
+  // useEffect hook to fetch data when the component mounts
+  useEffect(() => {
+    getPharmaceuticals();
+  }, []); // The empty dependency array ensures that the effect runs only once on mount
+
+
+
+  const handleSuccess = (message) => {
+    getPharmaceuticals();
+    setOpen(false);
+    // Using the showSuccessAlert function from AddNewData component
+    showSuccessAlert(message);
+  };
+
+  const handleError = (error) => {
+    console.error('Error during form submission:', error);
+    // Using the showErrorAlert function from AddNewData component
+    showErrorAlert(message);
+  };
+
+
+
 
   return (
     <div className='drugs'>
       <div className='drugsinfo'>
         <h1>Pharmaceutical</h1>
-        <button className='new-drugs' onClick={() => setOpen(true)}>Add New Pharmaceutical</button>
+        <button className='new-drugs' onClick={() => setOpen(true)}>
+          Add New Pharmaceutical
+        </button>
       </div>
-      <DataTable slug='pharmaceuticals' columns={columns} rows={modifiedProductsRows}/>
-      {open && <AddNewData slug='Pharmaceutical' columns={columns} setOpen={setOpen}/>}
+      {isLoading ? (
+        'Loading...' 
+      ) : (
+      <DataTable slug='pharmaceuticals' columns={columns} rows={pharmaceuticals} />
+      )}                  
+      {open && (
+        <AddNewData 
+          slug='Pharmaceutical' 
+          columns={columns} 
+          setOpen={setOpen} 
+          onSuccess={handleSuccess}
+          onError={handleError}
+        />
+        )}
     </div>
-  )
+  );
+};
 
-}
 
-export default PharmaceuticalsPage
+
+export default PharmaceuticalsPage;
+
+

@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import './PatientsPage.scss'
+import './ManufacturersPage.scss'
 import AddNewData from '../../components/AddComponent/AddNewData';
 import DataTable from '../../components/Tables/DataTable'
-import { patientRows } from '../../data';
+
 
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 100 },
+  { field: 'id', headerName: 'ID', width: 200 },
   {
     field: 'image',
     headerName: 'Avatar',
-    width: 150,
+    width: 100,
     renderCell: (params) => {
       return <img src={params.row.image || 'noavatar.png'} alt='' />;
     },
   },
   {
-    field: 'patientName',
-    headerName: 'Patient Name',
-    width: 150,
+    field: 'companyName',
+    headerName: 'Company Name',
+    width: 200,
     editable: true,
   },
   {
@@ -35,50 +35,33 @@ const columns = [
     editable: true,
   },
   {
-    field: 'items',
-    headerName: 'Items',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'quantities',
-    headerName: 'Quantities',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'amount',
-    headerName: 'Total Amount',
-    width: 150,
-    editable: true,
-  },
-  {
-    field: 'purchaseDate',
-    headerName: 'Purchase Date',
-    width: 150,
-    editable: true,
-  },
-  {
     field: 'active',
     headerName: 'Active',
     width: 150,
     type: 'boolean',
   },
   
-]
+];
 
-const PatientsPage = () => {
+
+
+
+
+const ManufacturesPage = () => {
   const [open, setOpen] = useState(false)
-  const [patients, setPatients] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [manufacturer, setManufacturer] = useState([]);
+  const [isLoading, setIsLoading] = useState(false)
 
 
-  const getPatients = async () => {
+  const getManufacturers = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get('http://localhost:5001/api/patients');
-      const fetchedPatients = response.data.map((patient) => ({ ...patient, id: patient._id }));
-      setPatients(fetchedPatients);
+      const response = await axios.get('http://localhost:5001/api/manufacturers');
+      const fetchedManufacturers = response.data.map((manufacturer) => ({ 
+        ...manufacturer,
+        id: manufacturer._id }));
+      setManufacturer(fetchedManufacturers);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -86,13 +69,14 @@ const PatientsPage = () => {
   };
 
 
+  
   useEffect(() => {
-    getPatients();
+    getManufacturers();
   }, []);
 
 
   const handleSuccess = (message) => {
-    getPatients();
+    getManufacturers();
     setOpen(false);
     // Using the showSuccessAlert function from AddNewData component
     showSuccessAlert(message);
@@ -103,26 +87,30 @@ const PatientsPage = () => {
     // Using the showErrorAlert function from AddNewData component
     showErrorAlert(message);
   };
-   
+
+
+
+
+
 
   return (
-    <div className='patients'>
-      <div className='patientsinfo'>
-        <h1>Patients</h1>
-        <button className='new-patient' onClick={() => setOpen(true)}>Add New Patient</button>
+    <div className='suppliers'>
+      <div className='suppliersinfo'>
+        <h1>Manufacturers</h1>
+        <button className='new-supplier' onClick={() => setOpen(true)}>Add New Manufacturers</button>
       </div>
-      {isLoading ? 'Loading...' : <DataTable slug='patients' columns={columns} rows={patients}/>}
+      {isLoading ? 'Loading...' : <DataTable slug='manufacturers' columns={columns} rows={manufacturer} />}
       {open && (
         <AddNewData 
-          slug='Patient' 
+          slug='Manufacturer' 
           columns={columns} 
           setOpen={setOpen}
           onSuccess={handleSuccess}
           onError={handleError}
         />
-      ) }
+      )}
     </div>
   )
 }
 
-export default PatientsPage
+export default ManufacturesPage;

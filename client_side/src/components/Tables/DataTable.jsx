@@ -3,15 +3,17 @@ import './DataTable.scss';
 import { DataGrid } from '@mui/x-data-grid';
 import { NavLink } from 'react-router-dom';
 
-const DataTable = (props) => {
-  const [searchQuery, setSearchQuery] = useState('');
 
-  const handleDelete = (id) => {
-    // Delete the API via API call
-    // axios.delete(`/api/${props.slug}/${id}`)
-    console.log(id + ' has been deleted');
-    
-  };
+
+
+
+
+
+const DataTable = (props) => {
+
+  const [searchQuery, setSearchQuery] = useState('');
+ 
+
 
   const actionColumns = {
     field: 'action',
@@ -24,7 +26,7 @@ const DataTable = (props) => {
             <img src='view.png' alt='' />
           </button>
         </NavLink>
-        <button className='delete' onClick={() => handleDelete(params.row.id)}>
+        <button className='delete' onClick={() => props.onDelete(params.row.id)}>
           <img src='delete.png' alt='' />
         </button>
       </div>
